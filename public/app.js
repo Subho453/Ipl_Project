@@ -18,7 +18,7 @@ function visualizeData(data) {
         title:{
           text:'Seasons'
         },
-        categories: data.Matchesperyear.Year,
+        categories: data.matchesPerYears.Year,
       },
       yAxis:{
           title:{
@@ -29,7 +29,7 @@ function visualizeData(data) {
         type: 'column',
         name:'Matches',
         colorByPoint: true,
-        data: data.Matchesperyear.Matches,
+        data: data.matchesPerYears.Matches,
         showInLegend: false
     }]
     });

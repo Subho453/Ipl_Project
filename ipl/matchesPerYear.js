@@ -1,5 +1,5 @@
-function matchesPerYear(){
-    var matchesPerYear= matches.reduce((acc,year) => {
+function matchesPerYear(array){
+    var matchesPerYear= array.reduce((acc,year) => {
          if(acc[year.season]){
              acc[year.season]++;
          }

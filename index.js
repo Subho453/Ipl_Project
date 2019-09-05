@@ -11,22 +11,23 @@ csv()
 
 })
 const matches=require('./matches.json');
-function MatchesPerYear(){
-    matchesperyear={};
-    matches.filter(year => {
-        if(matchesperyear.hasOwnProperty(year.season)==true){
-            matchesperyear[year.season]++;
+function matchesPerYear(){
+   var matchesPerYear= matches.reduce((acc,year) => {
+        if(acc[year.season]){
+            acc[year.season]++;
         }
         else{
-            matchesperyear[year.season]=1;
+            acc[year.season]=1;
         }
-    });            
-     Matchesperyear={"Year":Object.keys(matchesperyear),"Matches":Object.values(matchesperyear)};
-    return Matchesperyear;
+        return acc;
+    },{});            
+     matchesPerYears={"Year":Object.keys(matchesPerYear),"Matches":Object.values(matchesPerYear)};
+    return matchesPerYears;
+   
 }
-MatchesPerYear();
-let data={Matchesperyear};
+matchesPerYear();
+let data={matchesPerYears};
      (async () => {
         await writeJsonFile('public/data.json',data);
 
-     })();rm
+     })();
