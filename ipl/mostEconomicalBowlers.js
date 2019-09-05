@@ -1,14 +1,8 @@
-function mostEconomicalBowlers(deliveries) {
-    return [
-      {
-        name: "Muttiah Muralitharan",
-        economy: 6.67
-      },
-      {
-        name: "Sunil Narine",
-        economy: 6.67
-      }
-    ];
+function MatchesPerYear(Array,item) {
+    return Array.filter(arr =>arr==item)
+                .reduce(count =>(count+=1),0);
 }
 
-module.exports = mostEconomicalBowlers;
+module.exports ={
+  MatchesPerYear
+} 
