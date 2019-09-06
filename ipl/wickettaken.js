@@ -27,6 +27,8 @@ function mostWicketTaken(deliveries) {
 
 
 const deliveries = [
+    { bowler: 'Irfan', batsman: 'Gl', player_dismissed: 'Gl' },
+
     { bowler: 'Zaheer', batsman: 'Gl', player_dismissed: 'Gl' },
     { bowler: 'Irfan', batsman: 'Kl', player_dismissed: 'Kl' },
     { bowler: 'Bumrah', batsman: 'Hl', player_dismissed: 'Hl' },
