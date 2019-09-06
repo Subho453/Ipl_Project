@@ -1,7 +1,4 @@
-
-const matches=require('./matches.json');
-const deliveries=require('./deliveries.json');
-function extraRunsPerTeam(){
+function extraRunsPerTeam(matches,deliveries){
     var matchId=matches.filter(match => match.season=='2016')
                         .map(match =>match.id);
     var bowlingInning=deliveries.filter(delivery =>matchId.includes(delivery.match_id))
@@ -12,4 +9,5 @@ function extraRunsPerTeam(){
     },{});
     return extraRuns;
 }
-extraRunsPerTeam();
+
+module.exports=extraRunsPerTeam(extraruns);
