@@ -35,4 +35,3 @@ describe("Matches Won by each team per year", () => {
     expect(teamWonPerYear(array)).toEqual(expectedOutput);
   });
 })
-    // return Matchesperyear;

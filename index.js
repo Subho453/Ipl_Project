@@ -40,7 +40,6 @@ function teamWonPerYear(){
         }
         return acc;
     },{});
-    console.log(teamWon);
     teamWons={'Teams':Object.keys(teamWon),'Years':Object.values(teamWon)};
     return teamWons;
 }

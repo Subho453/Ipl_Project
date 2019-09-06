@@ -23,4 +23,5 @@ function teamWonPerYear(matches){
     },{});
     return teamWon;
 }
-module.exports=teamWonPerYear;
+module.exports=
+        teamWonPerYear;
