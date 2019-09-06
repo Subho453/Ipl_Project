@@ -20,9 +20,10 @@ function matchesPerYear(){
             acc[year.season]=1;
         }
         return acc;
-    },{});            
+    },{});  
      matchesPerYears={"Year":Object.keys(matchesPerYear),"Matches":Object.values(matchesPerYear)};
     return matchesPerYears;
+    
    
 }
 matchesPerYear();
