@@ -10,6 +10,7 @@ function extraRunsPerTeam(){
         acc[runs.team]=(acc[runs.team] || 0)+Number(runs.extraruns);
         return acc;
     },{});
+
     return extraRuns;
 }
 extraRunsPerTeam();
