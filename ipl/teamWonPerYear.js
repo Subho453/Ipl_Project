@@ -4,25 +4,23 @@ function teamWonPerYear(matches){
         if(acc[team.winner]){
             eachyear={};
             matches.map(match=>eachyear[match.season]=0);
-           let matchcount=matches.filter(teams =>teams.winner==team.winner)
-                                 .reduce(year=>{
-                if(year.season in acc){
-                    [year.season]++;
+           let matchcount=matches.filter(teams =>teams.winner===team.winner)
+                                 .reduce((acc,year)=>{
+                if(acc[year.season]){
+                    acc[year.season]++;
                 }
                 else{
-                    acc=eachyear;
-                    console.log(acc);
+                    acc[year.season]=1;
                 }
                 return acc;
-            },eachyear);
-            acc[team.winner]=eachyear;
-            
+            },{});
+            acc[team.winner]=matchcount;
         }
         else{
             acc[team.winner]={};
         }
         return acc;
     },{});
-    console.log(teamWon);
+    return teamWon;
 }
-module.exports =  teamWonPerYear ;
+module.exports=teamWonPerYear;
