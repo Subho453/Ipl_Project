@@ -9,6 +9,14 @@ csv()
       await writeJsonFile("matches.json", jsonObj);
     })();
   });
+  csv()
+  .fromFile("deliveries.csv")
+  .then(jsonObj => {
+    // console.log(jsonObj);
+    (async () => {
+      await writeJsonFile("deliveries.json", jsonObj);
+    })();
+  });
 const matches = require("./matches.json");
 const deliveries = require("./deliveries.json");
 function matchesPerYear() {
@@ -122,8 +130,8 @@ matchesPerYear();
 teamWonPerYear();
 extraRunsPerTeam();
 economicalBowlers();
-// let data={matchesPerYears,teamWons,extraRunsPerTeam};
-//      (async () => {
-//         await writeJsonFile('public/data.json',data);
+let data={matchesPerYears,teamWons,extraRunsPerTeam,mostEconomicalBowlers};
+     (async () => {
+        await writeJsonFile('public/data.json',data);
 
-//      })();
+     })();
