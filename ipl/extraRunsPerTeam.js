@@ -15,4 +15,5 @@ function extraRunsPerTeam(matches, deliveries) {
   return extraRuns;
 }
 
-module.exports = extraRunsPerTeam;
+module.exports =
+         extraRunsPerTeam;
