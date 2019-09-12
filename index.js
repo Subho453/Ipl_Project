@@ -35,8 +35,9 @@ function matchesPerYear() {
   return matchesPerYears;
 }
 function teamWonPerYear() {
+  var series={};
   let teamWon = matches
-    .filter(match => match.winner != "")
+    .filter(match => match.winner !='')
     .reduce((acc, team) => {
       if (acc[team.winner]) {
         eachyear = {};
@@ -50,14 +51,15 @@ function teamWonPerYear() {
               acc[year.season] = 1;
             }
             return acc;
-          }, {});
+          },eachyear);
         acc[team.winner] = matchcount;
+        series[team.winner]={'name':team.winner,'data':Object.values(matchcount)};
       } else {
         acc[team.winner] = {};
       }
       return acc;
     }, {});
-  teamWons = { Team: Object.keys(teamWon), Years: Object.values(teamWon) };
+  teamWons = { Years: Object.keys(Object.values(teamWon)[0]), seriesdata: Object.values(series) };
   return teamWons;
 }
 

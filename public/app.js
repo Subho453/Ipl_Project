@@ -45,7 +45,7 @@ function visualizeData(data) {
         title: {
           text: 'Years'
         },
-          categories: Object.keys(data.teamWons.Years[0]),
+          categories: data.teamWons.Years,
       },
       yAxis: {
           min: 0,
@@ -87,78 +87,59 @@ function visualizeData(data) {
               }
           }
       },
-      series: [{
-        
-          name: data.teamWons.Teams[0],
-          data: Object.values(data.teamWons.Years[0])
-      }, 
-      { 
-        name: data.teamWons.Teams[1],
-        data: Object.values(data.teamWons.Years[1])
+      series: data.teamWons.seriesdata
+  });
+  Highcharts.chart("extraRunsPerTeam", {
+    title: {
+      text: "Extra Runs given by each teams in 2016"
+    },
+    subtitle: {
+      text: "IPL data"
+    },
+    xAxis: {
+      title:{
+        text:'Teams'
       },
-      {
-        
-      name: data.teamWons.Teams[2],
-      data: Object.values(data.teamWons.Years[2])
+      categories: data.extraRunsPerTeam.Teams,
+    },
+    yAxis:{
+        title:{
+          text:'ExtraRuns'
+        }
+    },
+    series: [{
+      type: 'column',
+      name:'ExtraRuns',
+      colorByPoint: true,
+      data: data.extraRunsPerTeam.ExtraRuns,
+      showInLegend: false
+  }]
+  });
+  Highcharts.chart("mostEconomicalBowlers", {
+    title: {
+      text: "Most Economical Bowlers in Year 2015"
+    },
+    subtitle: {
+      text: "IPL data"
+    },
+    xAxis: {
+      title:{
+        text:'Bowlers'
       },
-      {
-        
-        name: data.teamWons.Teams[3],
-        data: Object.values(data.teamWons.Years[3])
-      },
-      {
-        
-        name: data.teamWons.Teams[4],
-        data: Object.values(data.teamWons.Years[4])
-      },
-      {
-        
-        name: data.teamWons.Teams[5],
-        data: Object.values(data.teamWons.Years[5])
-      },
-      {
-        
-        name: data.teamWons.Teams[6],
-        data: Object.values(data.teamWons.Years[6])
-      },
-      {
-        
-        name: data.teamWons.Teams[7],
-        data: Object.values(data.teamWons.Years[7])
-      },
-      {
-        
-        name: data.teamWons.Teams[8],
-        data: Object.values(data.teamWons.Years[8])
-      },
-      {
-        
-          name: data.teamWons.Teams[9],
-          data: Object.values(data.teamWons.Years[9])
-      },
-      {
-        
-            name: data.teamWons.Teams[10],
-            data: Object.values(data.teamWons.Years[10])
-      },
-      {
-        
-        name: data.teamWons.Teams[11],
-        data: Object.values(data.teamWons.Years[11])
-      },
-      {
-        
-        name: data.teamWons.Teams[12],
-        data: Object.values(data.teamWons.Years[12])
-      },
-      {
-        
-        name: data.teamWons.Teams[13],
-        data: Object.values(data.teamWons.Years[13])
-      },
-
-   
-    ]
+      categories: data.mostEconomicalBowlers.Bowlers,
+    },
+    yAxis:{
+        title:{
+          text:'Economies'
+        }
+    },
+    series: [{
+      type: 'column',
+      name:'Economy',
+      colorByPoint: true,
+      data: data.mostEconomicalBowlers.Economy,
+      showInLegend: false
+  }]
   });
 }
 
